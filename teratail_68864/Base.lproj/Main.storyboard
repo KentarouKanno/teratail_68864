@@ -21,17 +21,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GdH-38-gAa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GdH-38-gAa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="EZR-pT-X9N" customClass="MCSwipeTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomCell" rowHeight="79" id="EZR-pT-X9N" customClass="CustomCell" customModule="teratail_68864" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EZR-pT-X9N" id="45O-5y-Cwn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS8-Al-ayD">
+                                                    <rect key="frame" x="284" y="21" width="61" height="37"/>
+                                                    <color key="backgroundColor" red="0.8719249912" green="1" blue="0.84754517289999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="61" id="dHj-lP-OVC"/>
+                                                        <constraint firstAttribute="height" constant="37" id="tKf-Ph-D7g"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="pushButton:" destination="EZR-pT-X9N" eventType="touchUpInside" id="80m-Qe-K5W"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cta-RW-3VR">
+                                                    <rect key="frame" x="29" y="25" width="183" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="29" id="NXL-Eh-yLP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="fS8-Al-ayD" secondAttribute="bottom" constant="20" id="KMO-WJ-kmd"/>
+                                                <constraint firstItem="cta-RW-3VR" firstAttribute="leading" secondItem="45O-5y-Cwn" secondAttribute="leading" constant="29" id="UeR-tS-6fh"/>
+                                                <constraint firstItem="cta-RW-3VR" firstAttribute="top" secondItem="45O-5y-Cwn" secondAttribute="top" constant="25" id="WBI-IC-eIy"/>
+                                                <constraint firstAttribute="trailing" secondItem="fS8-Al-ayD" secondAttribute="trailing" constant="30" id="cDS-8w-g41"/>
+                                                <constraint firstAttribute="bottom" secondItem="cta-RW-3VR" secondAttribute="bottom" constant="24" id="cZh-An-FLq"/>
+                                                <constraint firstItem="fS8-Al-ayD" firstAttribute="top" secondItem="45O-5y-Cwn" secondAttribute="top" constant="21" id="gfS-OA-Svx"/>
+                                                <constraint firstItem="fS8-Al-ayD" firstAttribute="leading" secondItem="cta-RW-3VR" secondAttribute="trailing" constant="72" id="yTi-ek-ygF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="cta-RW-3VR" id="W6v-3h-i1a"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

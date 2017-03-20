@@ -22,15 +22,18 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // create
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MCSwipeTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as? CustomCell {
             
-            // setup
-            cell.selectionStyle = .none
-            cell.textLabel?.text = dataList[indexPath.row]
-            cell.detailTextLabel?.text = "details..."
-            cell.detailTextLabel?.textColor = .lightGray
+            cell.label.text = dataList[indexPath.row]
             cell.defaultColor = .lightGray
             cell.firstTrigger = 0.25;
+            
+            // setup
+//            cell.selectionStyle = .none
+//            cell.textLabel?.text = dataList[indexPath.row]
+//            cell.detailTextLabel?.text = "details..."
+//            cell.detailTextLabel?.textColor = .lightGray
+            
             
             cell.setSwipeGestureWith(UIImageView(image: UIImage(named: "check")), color: UIColor.green, mode: .exit, state: .state1, completionBlock: { [weak self] (cell, state, mode) in
                 
